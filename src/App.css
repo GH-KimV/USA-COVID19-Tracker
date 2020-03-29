@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.container{
+}
+
+.map {
+  float: left;
+  margin: 0 0 0 2rem;
+}
+
+.total-stats {
+  background-color: lightgray;
+  border-radius: 1rem;
+  display: inline-flex;
+}
+
+.total-stats p {
+  margin: 1rem;
+}
+
+.state-stats {
+  float: right;
+  width: 23rem;
+  height: 17rem;
+  margin: 2.5rem 18rem 0 0;
+  padding: 1rem;
+  background-color: lightgray;
+  border-radius: 1rem;
+}
+
+.chart {
+  float: right;
+  margin:2rem 5rem 0 0;
+  width: 50rem;
+  height: auto;
+}
+
+path {
+  pointer-events: all;
+}
+
+path:hover {
+  fill: #CC0000;
+  opacity: 0.50;
+  cursor: pointer;
+}
