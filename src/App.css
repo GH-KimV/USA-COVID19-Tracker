@@ -3,6 +3,7 @@
 }
 
 .container{
+  display: inline-flex;
 }
 
 .map {
@@ -21,19 +22,18 @@
 }
 
 .state-stats {
-  float: right;
-  width: 23rem;
-  height: 17rem;
-  margin: 2.5rem 18rem 0 0;
+  width: 20rem;
+  height: 15rem;
+  margin: 4rem 0 2rem 12rem;
   padding: 1rem;
   background-color: lightgray;
   border-radius: 1rem;
+  font-size: 0.9rem;
 }
 
 .chart {
-  float: right;
-  margin:2rem 5rem 0 0;
-  width: 50rem;
+  margin: 0;
+  width: auto;
   height: auto;
 }
 
@@ -45,4 +45,27 @@ path:hover {
   fill: #CC0000;
   opacity: 0.50;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .map {
+    float: none;
+    width: 100%;
+  }
+
+.container{
+  display: block;
+  text-align: center;
+}
+
+.total-stats {
+  width: auto;
+  background-color: lightgray;
+  border-radius: 1rem;
+  display: inline-flex;
+}
+
+.us-map {
+  width: 10rem;
+}
 }

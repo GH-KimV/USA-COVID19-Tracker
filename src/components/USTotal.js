@@ -12,7 +12,7 @@ const USTotal = ({
                 <strong>Active Cases:</strong> {active}
             </p>
             <p>
-                <strong>Recovered</strong> {recovered}
+                <strong>Recovered:</strong> {recovered}
             </p>
             <p>
                 <strong>Total Deaths:</strong> {deaths}

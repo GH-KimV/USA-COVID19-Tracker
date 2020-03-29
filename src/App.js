@@ -10,13 +10,12 @@ const axios = require('axios');
 
 class App extends Component {
     state = {
-        US:{},
+        US: {},
         USState: {},
         historical: {}
     };
 
     async componentDidMount() {
-
         let specificCountry = await covid.getCountry({
             country: 'United States'
         });
@@ -493,23 +492,54 @@ class App extends Component {
         return (
             <div className='App'>
                 <h1>USA COVID-19 Tracker</h1>
-                <USTotal  US={this.state.US} />
+                <USTotal US={this.state.US} />
                 <div className='container'>
                     <div className='map'>
-                    <USAMap
-                        customize={this.statesFilling()}
-                        width={900}
-                        height={700}
-                    />
+                        <USAMap
+                            className='us-map'
+                            customize={this.statesFilling()}
+                            // width={800}
+                            // height={800}
+                        />
                     </div>
+                    <div className='sub-container'>
                     <div className='state-stats'>
                         <h3>
                             {this.state.USState.state} Current COVID-19 Stats
                         </h3>
                         <USStateItem USState={this.state.USState} />
                     </div>
+                    <div className='chart'>
+                        <Line
+                            data={this.state.historical}
+                            options={{
+                                maintainAspectRatio: true,
+                                title: {
+                                    display: true,
+                                    text: 'Historical Timeline for US Cases',
+                                    fontSize: 20
+                                },
+                                legend: {
+                                    display: true
+                                },
+                                scales: {
+                                    yAxes: [
+                                        {
+                                            id: 'cases',
+                                            type: 'linear'
+                                        },
+                                        {
+                                            id: 'deaths',
+                                            type: 'linear'
+                                        }
+                                    ]
+                                }
+                            }}
+                        />
+                    </div>
+                    </div>
                 </div>
-                <div className='chart'>
+                {/* <div className='chart'>
                     <Line
                         data={this.state.historical}
                         options={{
@@ -536,7 +566,7 @@ class App extends Component {
                             }
                         }}
                     />
-                </div>
+                </div> */}
             </div>
         );
     }
