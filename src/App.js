@@ -498,8 +498,8 @@ class App extends Component {
                         <USAMap
                             className='us-map'
                             customize={this.statesFilling()}
-                            // width={800}
-                            // height={800}
+                            width={800}
+                            height={800}
                         />
                     </div>
                     <div className='sub-container'>
