@@ -79,62 +79,62 @@ class App extends Component {
     };
 
     getNJ = async () => {
-        let specificState = await track.states( 'New Jersey' );
+        let specificState = await track.states('New Jersey');
         this.setState({ USState: specificState });
     };
 
     getVT = async () => {
-        let specificState = await track.states( 'Vermont' );
+        let specificState = await track.states('Vermont');
         this.setState({ USState: specificState });
     };
 
     getNH = async () => {
-        let specificState = await track.states( 'New Hampshire' );
+        let specificState = await track.states('New Hampshire');
         this.setState({ USState: specificState });
     };
 
     getMA = async () => {
-        let specificState = await track.states( 'Massachusetts' );
+        let specificState = await track.states('Massachusetts');
         this.setState({ USState: specificState });
     };
 
     getME = async () => {
-        let specificState = await track.states('Maine' );
+        let specificState = await track.states('Maine');
         this.setState({ USState: specificState });
     };
 
     getRI = async () => {
-        let specificState = await track.states( 'Rhode Island' );
+        let specificState = await track.states('Rhode Island');
         this.setState({ USState: specificState });
     };
 
     getCT = async () => {
-        let specificState = await track.states('Connecticut' );
+        let specificState = await track.states('Connecticut');
         this.setState({ USState: specificState });
     };
 
     getPA = async () => {
-        let specificState = await track.states('Pennsylvania' );
+        let specificState = await track.states('Pennsylvania');
         this.setState({ USState: specificState });
     };
 
     getDE = async () => {
-        let specificState = await track.states( 'Delaware' );
+        let specificState = await track.states('Delaware');
         this.setState({ USState: specificState });
     };
 
     getMD = async () => {
-        let specificState = await track.getState('Maryland' );
+        let specificState = await track.getState('Maryland');
         this.setState({ USState: specificState });
     };
 
     getVA = async () => {
-        let specificState = await track.states( 'Virginia' );
+        let specificState = await track.states('Virginia');
         this.setState({ USState: specificState });
     };
 
     getWV = async () => {
-        let specificState = await track.states('West Virginia' );
+        let specificState = await track.states('West Virginia');
         this.setState({ USState: specificState });
     };
 
@@ -146,187 +146,187 @@ class App extends Component {
     };
 
     getNC = async () => {
-        let specificState = await track.states( 'North Carolina');
+        let specificState = await track.states('North Carolina');
         this.setState({ USState: specificState });
     };
 
     getSC = async () => {
-        let specificState = await track.states( 'South Carolina');
+        let specificState = await track.states('South Carolina');
         this.setState({ USState: specificState });
     };
 
     getGA = async () => {
-        let specificState = await track.states( 'Georgia' );
+        let specificState = await track.states('Georgia');
         this.setState({ USState: specificState });
     };
 
     getFL = async () => {
-        let specificState = await track.states( 'Florida' );
+        let specificState = await track.states('Florida');
         this.setState({ USState: specificState });
     };
 
     getOH = async () => {
-        let specificState = await track.states( 'Ohio' );
+        let specificState = await track.states('Ohio');
         this.setState({ USState: specificState });
     };
 
     getKY = async () => {
-        let specificState = await track.states( 'Kentucky' );
+        let specificState = await track.states('Kentucky');
         this.setState({ USState: specificState });
     };
 
     getTN = async () => {
-        let specificState = await track.states( 'Tennessee' );
+        let specificState = await track.states('Tennessee');
         this.setState({ USState: specificState });
     };
 
     getAL = async () => {
-        let specificState = await track.states( 'Alabama' );
+        let specificState = await track.states('Alabama');
         this.setState({ USState: specificState });
     };
 
     getMI = async () => {
-        let specificState = await track.states( 'Michigan' );
+        let specificState = await track.states('Michigan');
         this.setState({ USState: specificState });
     };
 
     getIN = async () => {
-        let specificState = await track.states('Indiana' );
+        let specificState = await track.states('Indiana');
         this.setState({ USState: specificState });
     };
 
     getMS = async () => {
-        let specificState = await track.states( 'Mississippi' );
+        let specificState = await track.states('Mississippi');
         this.setState({ USState: specificState });
     };
 
     getWI = async () => {
-        let specificState = await track.states( 'Wisconsin' );
+        let specificState = await track.states('Wisconsin');
         this.setState({ USState: specificState });
     };
 
     getIL = async () => {
-        let specificState = await track.states( 'Illinois' );
+        let specificState = await track.states('Illinois');
         this.setState({ USState: specificState });
     };
 
     getLA = async () => {
-        let specificState = await track.states( 'Louisiana' );
+        let specificState = await track.states('Louisiana');
         this.setState({ USState: specificState });
     };
 
     getAR = async () => {
-        let specificState = await track.states( 'Arkansas' );
+        let specificState = await track.states('Arkansas');
         this.setState({ USState: specificState });
     };
 
     getMO = async () => {
-        let specificState = await track.states('Missouri' );
+        let specificState = await track.states('Missouri');
         this.setState({ USState: specificState });
     };
 
     getIA = async () => {
-        let specificState = await track.states( 'Iowa' );
+        let specificState = await track.states('Iowa');
         this.setState({ USState: specificState });
     };
 
     getMN = async () => {
-        let specificState = await track.states('Minnesota' );
+        let specificState = await track.states('Minnesota');
         this.setState({ USState: specificState });
     };
 
     getND = async () => {
-        let specificState = await track.states( 'North Dakota' );
+        let specificState = await track.states('North Dakota');
         this.setState({ USState: specificState });
     };
 
     getSD = async () => {
-        let specificState = await track.states( 'South Dakota' );
+        let specificState = await track.states('South Dakota');
         this.setState({ USState: specificState });
     };
 
     getNE = async () => {
-        let specificState = await track.states( 'Nebraska' );
+        let specificState = await track.states('Nebraska');
         this.setState({ USState: specificState });
     };
 
     getKS = async () => {
-        let specificState = await track.states( 'Kansas' );
+        let specificState = await track.states('Kansas');
         this.setState({ USState: specificState });
     };
 
     getOK = async () => {
-        let specificState = await track.states('Oklahoma' );
+        let specificState = await track.states('Oklahoma');
         this.setState({ USState: specificState });
     };
 
     getTX = async () => {
-        let specificState = await track.states( 'Texas' );
+        let specificState = await track.states ('Texas');
         this.setState({ USState: specificState });
     };
 
     getHI = async () => {
-        let specificState = await track.states( 'Hawaii' );
+        let specificState = await track.states('Hawaii');
         this.setState({ USState: specificState });
     };
 
     getAK = async () => {
-        let specificState = await track.states( 'Alaska' );
+        let specificState = await track.states('Alaska');
         this.setState({ USState: specificState });
     };
 
     getMT = async () => {
-        let specificState = await track.states( 'Montana' );
+        let specificState = await track.states('Montana');
         this.setState({ USState: specificState });
     };
 
     getWY = async () => {
-        let specificState = await track.getState('Wyoming' );
+        let specificState = await track.getState('Wyoming');
         this.setState({ USState: specificState });
     };
 
     getCO = async () => {
-        let specificState = await track.states( 'Colorado' );
+        let specificState = await track.states('Colorado');
         this.setState({ USState: specificState });
     };
 
     getNM = async () => {
-        let specificState = await track.states('New Mexico' );
+        let specificState = await track.states('New Mexico');
         this.setState({ USState: specificState });
     };
 
     getAZ = async () => {
-        let specificState = await track.states( 'Arizona' );
+        let specificState = await track.states('Arizona');
         this.setState({ USState: specificState });
     };
 
     getUT = async () => {
-        let specificState = await track.states( 'Utah' );
+        let specificState = await track.states('Utah');
         this.setState({ USState: specificState });
     };
 
     getID = async () => {
-        let specificState = await track.getState( 'Idaho' );
+        let specificState = await track.getState('Idaho');
         this.setState({ USState: specificState });
     };
 
     getNV = async () => {
-        let specificState = await track.states( 'Nevada' );
+        let specificState = await track.states('Nevada');
         this.setState({ USState: specificState });
     };
 
     getCA = async () => {
-        let specificState = await track.states('California' );
+        let specificState = await track.states('California');
         this.setState({ USState: specificState });
     };
 
     getOR = async () => {
-        let specificState = await track.states( 'Oregon' );
+        let specificState = await track.states('Oregon');
         this.setState({ USState: specificState });
     };
 
     getWA = async () => {
-        let specificState = await track.states( 'Washington' );
+        let specificState = await track.states('Washington');
         this.setState({ USState: specificState });
     };
 
