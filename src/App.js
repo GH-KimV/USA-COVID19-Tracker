@@ -124,7 +124,7 @@ class App extends Component {
     };
 
     getMD = async () => {
-        let specificState = await track.getState('Maryland');
+        let specificState = await track.states('Maryland');
         this.setState({ USState: specificState });
     };
 
@@ -281,7 +281,7 @@ class App extends Component {
     };
 
     getWY = async () => {
-        let specificState = await track.getState('Wyoming');
+        let specificState = await track.states('Wyoming');
         this.setState({ USState: specificState });
     };
 
@@ -306,7 +306,7 @@ class App extends Component {
     };
 
     getID = async () => {
-        let specificState = await track.getState('Idaho');
+        let specificState = await track.states('Idaho');
         this.setState({ USState: specificState });
     };
 
@@ -544,34 +544,6 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-                {/* <div className='chart'>
-                    <Line
-                        data={this.state.historical}
-                        options={{
-                            maintainAspectRatio: true,
-                            title: {
-                                display: true,
-                                text: 'Historical Timeline for US Cases',
-                                fontSize: 20
-                            },
-                            legend: {
-                                display: true
-                            },
-                            scales: {
-                                yAxes: [
-                                    {
-                                        id: 'cases',
-                                        type: 'linear'
-                                    },
-                                    {
-                                        id: 'deaths',
-                                        type: 'linear'
-                                    }
-                                ]
-                            }
-                        }}
-                    />
-                </div> */}
             </div>
         );
     }
