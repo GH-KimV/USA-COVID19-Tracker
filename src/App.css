@@ -64,7 +64,7 @@ path {
 }
 
 path:hover {
-  fill: rgb(53, 93, 236);
+  fill: #6d8bf7;
   opacity: 0.50;
   cursor: pointer;
 }

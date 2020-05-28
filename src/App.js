@@ -480,7 +480,7 @@ class App extends Component {
                 clickHandler: () => this.getNV()
             },
             CA: {
-                fill: 'rgb(53, 93, 236)',
+                fill: '#6d8bf7',
                 clickHandler: () => this.getCA()
             },
             OR: {
