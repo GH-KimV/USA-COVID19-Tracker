@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+// import 'materialize-css/dist/css/materialize.min.css';
 import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
@@ -34,7 +35,7 @@ class App extends Component {
         var dataInfo = [];
         var deathData = [];
         var labels = [];
-
+ 
         for (const date in cases) {
             dataInfo.push(cases[date]);
             labels.push(date);
@@ -479,7 +480,7 @@ class App extends Component {
                 clickHandler: () => this.getNV()
             },
             CA: {
-                fill: '#CC0000',
+                fill: 'rgb(53, 93, 236)',
                 clickHandler: () => this.getCA()
             },
             OR: {
@@ -494,26 +495,27 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                <h1>USA COVID-19 Tracker</h1>
+                <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <USTotal US={this.state.US} />
                 <div className='container'>
                     <div className='map'>
                         <USAMap
                             className='us-map'
                             customize={this.statesFilling()}
-                            width={800}
-                            height={800}
+                            defaultFill ='rgb(180, 192, 233)'
+                            width={760}
+                            height={700}
                         />
                     </div>
                     <div className='sub-container'>
-                        <div className='state-stats'>
+                        {/* <div className='state-stats'>
                             <h3>
                                 {this.state.USState.state} Current COVID-19
                                 Stats
                             </h3>
                             <USStateItem USState={this.state.USState} />
-                        </div>
-                        <div className='chart'>
+                        </div> */}
+                        {/* <div className='chart'>
                             <Line
                                 data={this.state.historical}
                                 options={{
@@ -541,7 +543,7 @@ class App extends Component {
                                     }
                                 }}
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
