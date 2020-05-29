@@ -5,17 +5,16 @@ import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
 import { Line } from 'react-chartjs-2';
-const { NovelCovid } =  require('novelcovid');
+const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
 
 // const axios = require('axios');
 
 class App extends Component {
-
     state = {
         US: {},
         USState: {},
-        historical: {}
+        historical: {},
     };
 
     async componentDidMount() {
@@ -28,14 +27,14 @@ class App extends Component {
         // let res = await axios.get('https://corona.lmao.ninja/v2/historical/us');
         let res = await track.historical(null, 'United States');
         track.historical(true);
-        console.log(res)
+        console.log(res);
         const cases = res.timeline.cases;
         const deaths = res.timeline.deaths;
 
         var dataInfo = [];
         var deathData = [];
         var labels = [];
- 
+
         for (const date in cases) {
             dataInfo.push(cases[date]);
             labels.push(date);
@@ -57,7 +56,7 @@ class App extends Component {
                         lineTension: 0.5,
                         backgroundColor: 'rgba(75,192,192,1)',
                         borderColor: 'rgba(0,0,0,1)',
-                        borderWidth: 1
+                        borderWidth: 1,
                     },
                     {
                         label: 'deaths',
@@ -67,10 +66,10 @@ class App extends Component {
                         lineTension: 0.5,
                         backgroundColor: 'red',
                         borderColor: 'red',
-                        borderWidth: 1
-                    }
-                ]
-            }
+                        borderWidth: 1,
+                    },
+                ],
+            },
         });
     }
 
@@ -140,9 +139,7 @@ class App extends Component {
     };
 
     getDC = async () => {
-        let specificState = await track.states(
-             'District Of Columbia'
-        );
+        let specificState = await track.states('District Of Columbia');
         this.setState({ USState: specificState });
     };
 
@@ -262,7 +259,7 @@ class App extends Component {
     };
 
     getTX = async () => {
-        let specificState = await track.states ('Texas');
+        let specificState = await track.states('Texas');
         this.setState({ USState: specificState });
     };
 
@@ -331,164 +328,164 @@ class App extends Component {
         this.setState({ USState: specificState });
     };
 
-    mapHandler = e => {};
+    mapHandler = (e) => {};
 
     statesFilling = () => {
         return {
             NJ: {
-                clickHandler: () => this.getNJ()
+                clickHandler: () => this.getNJ(),
             },
             NY: {
-                clickHandler: () => this.getNY()
+                clickHandler: () => this.getNY(),
             },
             VT: {
-                clickHandler: () => this.getVT()
+                clickHandler: () => this.getVT(),
             },
             NH: {
-                clickHandler: () => this.getNH()
+                clickHandler: () => this.getNH(),
             },
             MA: {
-                clickHandler: () => this.getMA()
+                clickHandler: () => this.getMA(),
             },
             ME: {
-                clickHandler: () => this.getME()
+                clickHandler: () => this.getME(),
             },
             RI: {
-                clickHandler: () => this.getRI()
+                clickHandler: () => this.getRI(),
             },
             CT: {
-                clickHandler: () => this.getCT()
+                clickHandler: () => this.getCT(),
             },
             PA: {
-                clickHandler: () => this.getPA()
+                clickHandler: () => this.getPA(),
             },
             DE: {
-                clickHandler: () => this.getDE()
+                clickHandler: () => this.getDE(),
             },
             MD: {
-                clickHandler: () => this.getMD()
+                clickHandler: () => this.getMD(),
             },
             VA: {
-                clickHandler: () => this.getVA()
+                clickHandler: () => this.getVA(),
             },
             WV: {
-                clickHandler: () => this.getWV()
+                clickHandler: () => this.getWV(),
             },
             DC: {
-                clickHandler: () => this.getDC()
+                clickHandler: () => this.getDC(),
             },
             NC: {
-                clickHandler: () => this.getNC()
+                clickHandler: () => this.getNC(),
             },
             SC: {
-                clickHandler: () => this.getSC()
+                clickHandler: () => this.getSC(),
             },
             GA: {
-                clickHandler: () => this.getGA()
+                clickHandler: () => this.getGA(),
             },
             FL: {
-                clickHandler: () => this.getFL()
+                clickHandler: () => this.getFL(),
             },
             OH: {
-                clickHandler: () => this.getOH()
+                clickHandler: () => this.getOH(),
             },
             KY: {
-                clickHandler: () => this.getKY()
+                clickHandler: () => this.getKY(),
             },
             TN: {
-                clickHandler: () => this.getTN()
+                clickHandler: () => this.getTN(),
             },
             AL: {
-                clickHandler: () => this.getAL()
+                clickHandler: () => this.getAL(),
             },
             MI: {
-                clickHandler: () => this.getMI()
+                clickHandler: () => this.getMI(),
             },
             IN: {
-                clickHandler: () => this.getIN()
+                clickHandler: () => this.getIN(),
             },
             MS: {
-                clickHandler: () => this.getMS()
+                clickHandler: () => this.getMS(),
             },
             WI: {
-                clickHandler: () => this.getWI()
+                clickHandler: () => this.getWI(),
             },
             IL: {
-                clickHandler: () => this.getIL()
+                clickHandler: () => this.getIL(),
             },
             LA: {
-                clickHandler: () => this.getLA()
+                clickHandler: () => this.getLA(),
             },
             AR: {
-                clickHandler: () => this.getAR()
+                clickHandler: () => this.getAR(),
             },
             MO: {
-                clickHandler: () => this.getMO()
+                clickHandler: () => this.getMO(),
             },
             IA: {
-                clickHandler: () => this.getIA()
+                clickHandler: () => this.getIA(),
             },
             MN: {
-                clickHandler: () => this.getMN()
+                clickHandler: () => this.getMN(),
             },
             ND: {
-                clickHandler: () => this.getND()
+                clickHandler: () => this.getND(),
             },
             SD: {
-                clickHandler: () => this.getSD()
+                clickHandler: () => this.getSD(),
             },
             NE: {
-                clickHandler: () => this.getNE()
+                clickHandler: () => this.getNE(),
             },
             KS: {
-                clickHandler: () => this.getKS()
+                clickHandler: () => this.getKS(),
             },
             OK: {
-                clickHandler: () => this.getOK()
+                clickHandler: () => this.getOK(),
             },
             TX: {
-                clickHandler: () => this.getTX()
+                clickHandler: () => this.getTX(),
             },
             HI: {
-                clickHandler: () => this.getHI()
+                clickHandler: () => this.getHI(),
             },
             AK: {
-                clickHandler: () => this.getAK()
+                clickHandler: () => this.getAK(),
             },
             MT: {
-                clickHandler: () => this.getMT()
+                clickHandler: () => this.getMT(),
             },
             WY: {
-                clickHandler: () => this.getWY()
+                clickHandler: () => this.getWY(),
             },
             CO: {
-                clickHandler: () => this.getCO()
+                clickHandler: () => this.getCO(),
             },
             NM: {
-                clickHandler: () => this.getNM()
+                clickHandler: () => this.getNM(),
             },
             AZ: {
-                clickHandler: () => this.getAZ()
+                clickHandler: () => this.getAZ(),
             },
             UT: {
-                clickHandler: () => this.getUT()
+                clickHandler: () => this.getUT(),
             },
             ID: {
-                clickHandler: () => this.getID()
+                clickHandler: () => this.getID(),
             },
             NV: {
-                clickHandler: () => this.getNV()
+                clickHandler: () => this.getNV(),
             },
             CA: {
                 fill: '#6d8bf7',
-                clickHandler: () => this.getCA()
+                clickHandler: () => this.getCA(),
             },
             OR: {
-                clickHandler: () => this.getOR()
+                clickHandler: () => this.getOR(),
             },
             WA: {
-                clickHandler: () => this.getWA()
-            }
+                clickHandler: () => this.getWA(),
+            },
         };
     };
 
@@ -496,15 +493,18 @@ class App extends Component {
         return (
             <div className='App'>
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
-                <USTotal US={this.state.US} />
-                <div className='container'>
+                <div className='total-stats-container'>
+                    <USTotal US={this.state.US} />
+                </div>
+                <div className=''>
                     <div className='map'>
                         <USAMap
                             className='us-map'
                             customize={this.statesFilling()}
-                            defaultFill ='rgb(180, 192, 233)'
-                            width={760}
-                            height={700}
+                            defaultFill='rgb(180, 192, 233)'
+                            title='USA Map'
+                            width={`auto`}
+                            // height={200}
                         />
                     </div>
                     <div className='sub-container'>

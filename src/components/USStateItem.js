@@ -4,7 +4,7 @@ const USStateItem = ({
     USState: { state, cases, todayCases, deaths, todayDeaths, active }
 }) => {
     return (
-        <div>
+        <>
             <p>
                 <strong>State:</strong> {state}
             </p>
@@ -23,7 +23,7 @@ const USStateItem = ({
             <p>
                 <strong>Current Active Cases:</strong> {active}
             </p>
-        </div>
+        </>
     );
 };
 
