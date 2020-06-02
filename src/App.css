@@ -13,28 +13,31 @@
 
 .map {
   margin-top: 8rem;
-    margin-right: 15rem;
+    margin-right: 20rem;
     justify-content: center;
     text-align: center;
 }
 
 .total-stats-container{
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: #6d8bf7;
   position: absolute;
+  width: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
   right: 0;
   top: 0;
+  /* padding: .05rem; */
 }
 
 .total-stats {
-  padding:  2rem;
+  /* padding:  2rem; */
    position: relative;
-   top: 50%;
-   transform: translateY(-50%);
+   top: 8%;
+   transform: translateY(-8%);
+   margin-bottom: 1rem;
 }
 
 .total-stats hr {
@@ -42,7 +45,7 @@
 }
 
 .total-stats p {
-    margin-top: 1rem;
+    margin: 0 1rem 1rem;
 }
 
 .total-stats span {
@@ -60,11 +63,15 @@
 }
 
 .chart {
-    /* margin: 0;
-    width: auto;
-    height: auto; */
+    /* margin-bottom: 4rem; */
+    /* width: auto; */
+    /* height: 10%; */
+    margin: 0 1rem;
 }
 
+.chart hr{
+    /* width: 60%; */
+}
 path {
     pointer-events: all;
 }
@@ -73,6 +80,7 @@ path:hover {
     fill: #6d8bf7;
     opacity: 0.5;
     cursor: pointer;
+    /* transo */
 }
 
 @media only screen and (max-width: 768px) {

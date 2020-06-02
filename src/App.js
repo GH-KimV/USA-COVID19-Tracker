@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import './App.css';
 // import 'materialize-css/dist/css/materialize.min.css';
 import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
+import { Zoom, ZoomVariants } from './components/styles';
+// import { motion, useDomEvent } from "framer-motion";
+
 import { Line } from 'react-chartjs-2';
+import { withTheme } from 'styled-components';
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
-
 // const axios = require('axios');
 
 class App extends Component {
@@ -15,6 +18,7 @@ class App extends Component {
         US: {},
         USState: {},
         historical: {},
+        // isZoomed: false,
     };
 
     async componentDidMount() {
@@ -477,7 +481,7 @@ class App extends Component {
                 clickHandler: () => this.getNV(),
             },
             CA: {
-                fill: '#6d8bf7',
+                // fill: '#6d8bf7',
                 clickHandler: () => this.getCA(),
             },
             OR: {
@@ -489,24 +493,91 @@ class App extends Component {
         };
     };
 
+    // toggleZoom = () => {
+    //     this.setState({ isZoomed: !this.state.isZoomed });
+    // };
+
     render() {
+        const { isZoomed } = this.state;
         return (
             <div className='App'>
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <div className='total-stats-container'>
                     <USTotal US={this.state.US} />
-                </div>
-                <div className=''>
-                    <div className='map'>
-                        <USAMap
-                            className='us-map'
-                            customize={this.statesFilling()}
-                            defaultFill='rgb(180, 192, 233)'
-                            title='USA Map'
-                            width={`auto`}
-                            // height={200}
+                    <div className='chart'>
+                        <hr />
+                        <Line
+                            data={this.state.historical}
+                            width={350}
+                            height={270}
+                            options={{
+                                maintainAspectRatio: true,
+                                title: {
+                                    display: true,
+                                    text: 'Historical Timeline for US Cases',
+                                    fontSize: 15,
+                                    fontColor: 'white',
+                                },
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        display: true,
+                                        fontColor: 'white',
+                                        fontSize: 12,
+                                    },
+                                },
+                                scales: {
+                                    display: true,
+                                    fontSize: 15,
+
+                                    fontColor: 'white',
+                                    yAxes: [
+                                        {
+                                            id: 'cases',
+                                            type: 'linear',
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                        {
+                                            id: 'deaths',
+                                            type: 'linear',
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                    ],
+                                    xAxes: [
+                                        {
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                    ],
+                                },
+                            }}
                         />
                     </div>
+                </div>
+                <div className=''>
+                    <Zoom
+                        onClick={this.toggleZoom}
+                        initial={isZoomed ? 'ZoomIn' : 'zoomOut'}
+                        animate={isZoomed ? 'zoomIn' : 'zoomOut'}
+                        variants={ZoomVariants}
+                    >
+                        <div className='map'>
+                            <USAMap
+                                className='us-map'
+                                customize={this.statesFilling()}
+                                defaultFill='rgb(180, 192, 233)'
+                                title='USA Map'
+                                width={`auto`}
+                                // height={200}
+                            />
+                        </div>
+                    </Zoom>
+
                     <div className='sub-container'>
                         {/* <div className='state-stats'>
                             <h3>
