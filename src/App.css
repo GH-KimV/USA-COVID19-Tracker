@@ -20,7 +20,7 @@
 
 .total-stats-container{
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   background-color: #6d8bf7;
   position: absolute;
   width: auto;
@@ -60,6 +60,7 @@
     background-color: lightgray;
     border-radius: 1rem;
     font-size: 0.9rem; */
+    /* color: black; */
 }
 
 .chart {

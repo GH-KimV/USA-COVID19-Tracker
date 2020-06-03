@@ -5,16 +5,51 @@ import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
 import { Zoom, ZoomVariants } from './components/styles';
 import { Line } from 'react-chartjs-2';
+
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
 // const axios = require('axios');
 
+const customStateModalStyles = {
+    content: {
+        backgroundColor: '#6d8bf7',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+
+const customChartModalStyles = {
+    content: {
+        backgroundColor: '#6d8bf7',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};
+
+var subtitle;
+
+// Modal.setAppElement('#root');
+Modal.setAppElement(document.getElementById('root'));
 
 class App extends Component {
     state = {
         US: {},
         USState: {},
         historical: {},
+        stateModalIsOpen: false,
+        chartModalIsOpen: false,
     };
 
     async componentDidMount() {
@@ -313,7 +348,6 @@ class App extends Component {
     };
 
     getCA = async () => {
-       
         let specificState = await track.states('California');
         this.setState({ USState: specificState });
     };
@@ -330,169 +364,202 @@ class App extends Component {
 
     selectState = () => {
         let select = false;
-        if(!select){
-            
+        if (!select) {
         }
-    }
+    };
 
     statesFilling = () => {
-        this.selectState()
+        this.selectState();
         return {
             NJ: {
-                clickHandler: () => this.getNJ(),
+                clickHandler: () => this.getNJ() && this.openStateModal(),
             },
             NY: {
-                clickHandler: () => this.getNY(),
+                clickHandler: () => this.getNY() && this.openStateModal(),
             },
             VT: {
-                clickHandler: () => this.getVT(),
+                clickHandler: () => this.getVT() && this.openStateModal(),
             },
             NH: {
-                clickHandler: () => this.getNH(),
+                clickHandler: () => this.getNH() && this.openStateModal(),
             },
             MA: {
-                clickHandler: () => this.getMA(),
+                clickHandler: () => this.getMA() && this.openStateModal(),
             },
             ME: {
-                clickHandler: () => this.getME(),
+                clickHandler: () => this.getME() && this.openStateModal(),
             },
             RI: {
-                clickHandler: () => this.getRI(),
+                clickHandler: () => this.getRI() && this.openStateModal(),
             },
             CT: {
-                clickHandler: () => this.getCT(),
+                clickHandler: () => this.getCT() && this.openStateModal(),
             },
             PA: {
-                clickHandler: () => this.getPA(),
+                clickHandler: () => this.getPA() && this.openStateModal(),
             },
             DE: {
-                clickHandler: () => this.getDE(),
+                clickHandler: () => this.getDE() && this.openStateModal(),
             },
             MD: {
-                clickHandler: () => this.getMD(),
+                clickHandler: () => this.getMD() && this.openStateModal(),
             },
             VA: {
-                clickHandler: () => this.getVA(),
+                clickHandler: () => this.getVA() && this.openStateModal(),
             },
             WV: {
-                clickHandler: () => this.getWV(),
+                clickHandler: () => this.getWV() && this.openStateModal(),
             },
             DC: {
-                clickHandler: () => this.getDC(),
+                clickHandler: () => this.getDC() && this.openStateModal(),
             },
             NC: {
-                clickHandler: () => this.getNC(),
+                clickHandler: () => this.getNC() && this.openStateModal(),
             },
             SC: {
-                clickHandler: () => this.getSC(),
+                clickHandler: () => this.getSC() && this.openStateModal(),
             },
             GA: {
-                clickHandler: () => this.getGA(),
+                clickHandler: () => this.getGA() && this.openStateModal(),
             },
             FL: {
-                clickHandler: () => this.getFL(),
+                clickHandler: () => this.getFL() && this.openStateModal(),
             },
             OH: {
-                clickHandler: () => this.getOH(),
+                clickHandler: () => this.getOH() && this.openStateModal(),
             },
             KY: {
-                clickHandler: () => this.getKY(),
+                clickHandler: () => this.getKY() && this.openStateModal(),
             },
             TN: {
-                clickHandler: () => this.getTN(),
+                clickHandler: () => this.getTN() && this.openStateModal(),
             },
             AL: {
-                clickHandler: () => this.getAL(),
+                clickHandler: () => this.getAL() && this.openStateModal(),
             },
             MI: {
-                clickHandler: () => this.getMI(),
+                clickHandler: () => this.getMI() && this.openStateModal(),
             },
             IN: {
-                clickHandler: () => this.getIN(),
+                clickHandler: () => this.getIN() && this.openStateModal(),
             },
             MS: {
-                clickHandler: () => this.getMS(),
+                clickHandler: () => this.getMS() && this.openStateModal(),
             },
             WI: {
-                clickHandler: () => this.getWI(),
+                clickHandler: () => this.getWI() && this.openStateModal(),
             },
             IL: {
-                clickHandler: () => this.getIL(),
+                clickHandler: () => this.getIL() && this.openStateModal(),
             },
             LA: {
-                clickHandler: () => this.getLA(),
+                clickHandler: () => this.getLA() && this.openStateModal(),
             },
             AR: {
-                clickHandler: () => this.getAR(),
+                clickHandler: () => this.getAR() && this.openStateModal(),
             },
             MO: {
-                clickHandler: () => this.getMO(),
+                clickHandler: () => this.getMO() && this.openStateModal(),
             },
             IA: {
-                clickHandler: () => this.getIA(),
+                clickHandler: () => this.getIA() && this.openStateModal(),
             },
             MN: {
-                clickHandler: () => this.getMN(),
+                clickHandler: () => this.getMN() && this.openStateModal(),
             },
             ND: {
-                clickHandler: () => this.getND(),
+                clickHandler: () => this.getND() && this.openStateModal(),
             },
             SD: {
-                clickHandler: () => this.getSD(),
+                clickHandler: () => this.getSD() && this.openStateModal(),
             },
             NE: {
-                clickHandler: () => this.getNE(),
+                clickHandler: () => this.getNE() && this.openStateModal(),
             },
             KS: {
-                clickHandler: () => this.getKS(),
+                clickHandler: () => this.getKS() && this.openStateModal(),
             },
             OK: {
-                clickHandler: () => this.getOK(),
+                clickHandler: () => this.getOK() && this.openStateModal(),
             },
             TX: {
-                clickHandler: () => this.getTX(),
+                clickHandler: () => this.getTX() && this.openStateModal(),
             },
             HI: {
-                clickHandler: () => this.getHI(),
+                clickHandler: () => this.getHI() && this.openStateModal(),
             },
             AK: {
-                clickHandler: () => this.getAK(),
+                clickHandler: () => this.getAK() && this.openStateModal(),
             },
             MT: {
-                clickHandler: () => this.getMT(),
+                clickHandler: () => this.getMT() && this.openStateModal(),
             },
             WY: {
-                clickHandler: () => this.getWY(),
+                clickHandler: () => this.getWY() && this.openStateModal(),
             },
             CO: {
-                clickHandler: () => this.getCO(),
+                clickHandler: () => this.getCO() && this.openStateModal(),
             },
             NM: {
-                clickHandler: () => this.getNM(),
+                clickHandler: () => this.getNM() && this.openStateModal(),
             },
             AZ: {
-                clickHandler: () => this.getAZ(),
+                clickHandler: () => this.getAZ() && this.openStateModal(),
             },
             UT: {
-                clickHandler: () => this.getUT(),
+                clickHandler: () => this.getUT() && this.openStateModal(),
             },
             ID: {
-                clickHandler: () => this.getID(),
+                clickHandler: () => this.getID() && this.openStateModal(),
             },
             NV: {
-                clickHandler: () => this.getNV(),
+                clickHandler: () => this.getNV() && this.openStateModal(),
             },
             CA: {
                 // fillColor: '#6d8bf7',
-                clickHandler: () => this.getCA(),
+                clickHandler: () => this.getCA() && this.openStateModal(),
             },
             OR: {
-                clickHandler: () => this.getOR(),
+                clickHandler: () => this.getOR()  && this.openStateModal(),
             },
             WA: {
-                clickHandler: () => this.getWA(),
+                clickHandler: () => this.getWA()  && this.openStateModal(),
             },
         };
+    };
+
+    openStateModal = () => {
+        this.setState({
+            stateModalIsOpen: true,
+        });
+    };
+
+    afterOpenStateModal() {
+        // references are now sync'd and can be accessed.
+        // subtitle.style.color = '#6d8bf7';
+    }
+
+    closeStateModal = () => {
+        this.setState({
+            stateModalIsOpen: false,
+        });
+    };
+
+    openChartModal = () => {
+        this.setState({
+            chartModalIsOpen: true,
+        });
+    };
+
+    afterOpenChartModal() {
+        // references are now sync'd and can be accessed.
+        // subtitle.style.color = '#6d8bf7';
+    }
+
+    closeChartModal = () => {
+        this.setState({
+            chartModalIsOpen: false,
+        });
     };
 
     render() {
@@ -501,12 +568,21 @@ class App extends Component {
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <div className='total-stats-container'>
                     <USTotal US={this.state.US} />
+                    <button className="open-chart" onClick={this.openChartModal}>Open historical timeline chart</button>
+                    <Modal
+                    isOpen={this.state.chartModalIsOpen}
+                    onAfterOpen={this.afterOpenChartModal}
+                    onRequestClose={this.state.closeChartModal}
+                    style={customChartModalStyles}
+                    contentLabel='Example Modal'
+                >
                     <div className='chart'>
-                        <hr />
+                        {/* <hr /> */}
+                        <button onClick={this.closeChartModal}>x</button>
                         <Line
                             data={this.state.historical}
-                            width={350}
-                            height={270}
+                            width={900}
+                            height={720}
                             options={{
                                 maintainAspectRatio: true,
                                 title: {
@@ -520,7 +596,7 @@ class App extends Component {
                                     labels: {
                                         display: true,
                                         fontColor: 'white',
-                                        fontSize: 12,
+                                        fontSize: 13,
                                     },
                                 },
                                 scales: {
@@ -555,33 +631,40 @@ class App extends Component {
                             }}
                         />
                     </div>
+                </Modal>
                 </div>
                 {/* <div className=''> */}
-                    <div className='map'>
-                            <USAMap
-                                className='us-map'
-                                customize={this.statesFilling()}
-                                // onClick={}
-                                defaultFill='rgb(180, 192, 233)'
-                                title='USA Map'
-                                width={'auto'}
-                                // height={200}
-                            />
-                    </div>
-            
-                    {/* </Zoom> */}
-
-                    {/* <div className='state-stats'>
-                            <h3>
-                                {this.state.USState.state} Current COVID-19
-                                Stats
-                            </h3>
-                            <USStateItem USState={this.state.USState} />
-                        </div> */}
+                <div className='map'>
+                    <USAMap
+                        className='us-map'
+                        customize={this.statesFilling()}
+                        defaultFill='rgb(180, 192, 233)'
+                        title='USA Map'
+                        width={'auto'}
+                        // height={200}
+                    />
                 </div>
-            // </div>
+
+                <Modal
+                    isOpen={this.state.stateModalIsOpen}
+                    onAfterOpen={this.afterOpenStateModal}
+                    onRequestClose={this.state.closeStateModal}
+                    style={customStateModalStyles}
+                    contentLabel='Example Modal'
+                >
+                    <div className='state-stats'>
+                        <h3 ref={(_subtitle) => (subtitle = _subtitle)}>
+                            {this.state.USState.state} current COVID-19 Stats
+                            <button onClick={this.closeStateModal}>x</button>
+                        </h3>
+                        <USStateItem USState={this.state.USState} />
+                    </div>
+                </Modal>
+            </div>
         );
     }
 }
 
 export default App;
+
+// ReactDOM.render(<App />, 'root');
