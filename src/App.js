@@ -1,34 +1,29 @@
 import React, { Component, useRef } from 'react';
 import './App.css';
-// import 'materialize-css/dist/css/materialize.min.css';
 import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
 import { Zoom, ZoomVariants } from './components/styles';
-// import { motion, useDomEvent } from "framer-motion";
-
 import { Line } from 'react-chartjs-2';
-import { withTheme } from 'styled-components';
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
 // const axios = require('axios');
+
 
 class App extends Component {
     state = {
         US: {},
         USState: {},
         historical: {},
-        // isZoomed: false,
     };
 
     async componentDidMount() {
         let specificCountry = await track.countries('United States');
         this.setState({ US: specificCountry });
 
-        let specificState = await track.states('California');
-        this.setState({ USState: specificState });
-        console.log(this.state.USState);
-        // let res = await axios.get('https://corona.lmao.ninja/v2/historical/us');
+        // let specificState = await track.states('California');
+        // this.setState({ USState: specificState });
+        // console.log(this.state.USState);
         let res = await track.historical(null, 'United States');
         track.historical(true);
         console.log(res);
@@ -318,6 +313,7 @@ class App extends Component {
     };
 
     getCA = async () => {
+       
         let specificState = await track.states('California');
         this.setState({ USState: specificState });
     };
@@ -332,9 +328,15 @@ class App extends Component {
         this.setState({ USState: specificState });
     };
 
-    mapHandler = (e) => {};
+    selectState = () => {
+        let select = false;
+        if(!select){
+            
+        }
+    }
 
     statesFilling = () => {
+        this.selectState()
         return {
             NJ: {
                 clickHandler: () => this.getNJ(),
@@ -481,7 +483,7 @@ class App extends Component {
                 clickHandler: () => this.getNV(),
             },
             CA: {
-                // fill: '#6d8bf7',
+                // fillColor: '#6d8bf7',
                 clickHandler: () => this.getCA(),
             },
             OR: {
@@ -493,12 +495,7 @@ class App extends Component {
         };
     };
 
-    // toggleZoom = () => {
-    //     this.setState({ isZoomed: !this.state.isZoomed });
-    // };
-
     render() {
-        const { isZoomed } = this.state;
         return (
             <div className='App'>
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
@@ -559,65 +556,30 @@ class App extends Component {
                         />
                     </div>
                 </div>
-                <div className=''>
-                    <Zoom
-                        onClick={this.toggleZoom}
-                        initial={isZoomed ? 'ZoomIn' : 'zoomOut'}
-                        animate={isZoomed ? 'zoomIn' : 'zoomOut'}
-                        variants={ZoomVariants}
-                    >
-                        <div className='map'>
+                {/* <div className=''> */}
+                    <div className='map'>
                             <USAMap
                                 className='us-map'
                                 customize={this.statesFilling()}
+                                // onClick={}
                                 defaultFill='rgb(180, 192, 233)'
                                 title='USA Map'
-                                width={`auto`}
+                                width={'auto'}
                                 // height={200}
                             />
-                        </div>
-                    </Zoom>
+                    </div>
+            
+                    {/* </Zoom> */}
 
-                    <div className='sub-container'>
-                        {/* <div className='state-stats'>
+                    {/* <div className='state-stats'>
                             <h3>
                                 {this.state.USState.state} Current COVID-19
                                 Stats
                             </h3>
                             <USStateItem USState={this.state.USState} />
                         </div> */}
-                        {/* <div className='chart'>
-                            <Line
-                                data={this.state.historical}
-                                options={{
-                                    maintainAspectRatio: true,
-                                    title: {
-                                        display: true,
-                                        text:
-                                            'Historical Timeline for US Cases',
-                                        fontSize: 20
-                                    },
-                                    legend: {
-                                        display: true
-                                    },
-                                    scales: {
-                                        yAxes: [
-                                            {
-                                                id: 'cases',
-                                                type: 'linear'
-                                            },
-                                            {
-                                                id: 'deaths',
-                                                type: 'linear'
-                                            }
-                                        ]
-                                    }
-                                }}
-                            />
-                        </div> */}
-                    </div>
                 </div>
-            </div>
+            // </div>
         );
     }
 }
