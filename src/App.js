@@ -25,7 +25,6 @@ const customStateModalStyles = {
     },
 };
 
-
 const customChartModalStyles = {
     content: {
         backgroundColor: '#6d8bf7',
@@ -520,10 +519,10 @@ class App extends Component {
                 clickHandler: () => this.getCA() && this.openStateModal(),
             },
             OR: {
-                clickHandler: () => this.getOR()  && this.openStateModal(),
+                clickHandler: () => this.getOR() && this.openStateModal(),
             },
             WA: {
-                clickHandler: () => this.getWA()  && this.openStateModal(),
+                clickHandler: () => this.getWA() && this.openStateModal(),
             },
         };
     };
@@ -567,73 +566,78 @@ class App extends Component {
             <div className='App'>
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <div className='total-stats-container'>
+                    <button
+                        className='open-chart'
+                        onClick={this.openChartModal}
+                    >
+                        Historical Timeline
+                    </button>
                     <USTotal US={this.state.US} />
-                    <button className="open-chart" onClick={this.openChartModal}>Open historical timeline chart</button>
                     <Modal
-                    isOpen={this.state.chartModalIsOpen}
-                    onAfterOpen={this.afterOpenChartModal}
-                    onRequestClose={this.state.closeChartModal}
-                    style={customChartModalStyles}
-                    contentLabel='Example Modal'
-                >
-                    <div className='chart'>
-                        {/* <hr /> */}
-                        <button onClick={this.closeChartModal}>x</button>
-                        <Line
-                            data={this.state.historical}
-                            width={900}
-                            height={720}
-                            options={{
-                                maintainAspectRatio: true,
-                                title: {
-                                    display: true,
-                                    text: 'Historical Timeline for US Cases',
-                                    fontSize: 15,
-                                    fontColor: 'white',
-                                },
-                                legend: {
-                                    display: true,
-                                    labels: {
+                        isOpen={this.state.chartModalIsOpen}
+                        onAfterOpen={this.afterOpenChartModal}
+                        onRequestClose={this.state.closeChartModal}
+                        style={customChartModalStyles}
+                        contentLabel='Example Modal'
+                    >
+                        <div className='chart'>
+                            {/* <hr /> */}
+                            <button onClick={this.closeChartModal} className='close-button'>x</button>
+                            <Line
+                                data={this.state.historical}
+                                width={900}
+                                height={720}
+                                options={{
+                                    maintainAspectRatio: true,
+                                    title: {
                                         display: true,
+                                        text:
+                                            'Historical Timeline for US Cases',
+                                        fontSize: 15,
                                         fontColor: 'white',
-                                        fontSize: 13,
                                     },
-                                },
-                                scales: {
-                                    display: true,
-                                    fontSize: 15,
+                                    legend: {
+                                        display: true,
+                                        labels: {
+                                            display: true,
+                                            fontColor: 'white',
+                                            fontSize: 13,
+                                        },
+                                    },
+                                    scales: {
+                                        display: true,
+                                        fontSize: 15,
 
-                                    fontColor: 'white',
-                                    yAxes: [
-                                        {
-                                            id: 'cases',
-                                            type: 'linear',
-                                            ticks: {
-                                                fontColor: 'white',
+                                        fontColor: 'white',
+                                        yAxes: [
+                                            {
+                                                id: 'cases',
+                                                type: 'linear',
+                                                ticks: {
+                                                    fontColor: 'white',
+                                                },
                                             },
-                                        },
-                                        {
-                                            id: 'deaths',
-                                            type: 'linear',
-                                            ticks: {
-                                                fontColor: 'white',
+                                            {
+                                                id: 'deaths',
+                                                type: 'linear',
+                                                ticks: {
+                                                    fontColor: 'white',
+                                                },
                                             },
-                                        },
-                                    ],
-                                    xAxes: [
-                                        {
-                                            ticks: {
-                                                fontColor: 'white',
+                                        ],
+                                        xAxes: [
+                                            {
+                                                ticks: {
+                                                    fontColor: 'white',
+                                                },
                                             },
-                                        },
-                                    ],
-                                },
-                            }}
-                        />
-                    </div>
-                </Modal>
+                                        ],
+                                    },
+                                }}
+                            />
+                        </div>
+                    </Modal>
                 </div>
-                {/* <div className=''> */}
                 <div className='map'>
                     <USAMap
                         className='us-map'
@@ -654,8 +658,8 @@ class App extends Component {
                 >
                     <div className='state-stats'>
                         <h3 ref={(_subtitle) => (subtitle = _subtitle)}>
-                            {this.state.USState.state} current COVID-19 Stats
-                            <button onClick={this.closeStateModal}>x</button>
+                            {/* {this.state.USState.state} current COVID-19 stats */}
+                            <button onClick={this.closeStateModal} className='close-button'>x</button>
                         </h3>
                         <USStateItem USState={this.state.USState} />
                     </div>
@@ -666,5 +670,3 @@ class App extends Component {
 }
 
 export default App;
-
-// ReactDOM.render(<App />, 'root');
