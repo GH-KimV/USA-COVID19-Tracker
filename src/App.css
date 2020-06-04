@@ -30,16 +30,17 @@
     top: 0;
 }
 
-.open-chart{
+.open-chart {
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
     background: rgb(180, 192, 233);
     padding: 20px;
     display: inline-block;
-    /* border: none; */
     transition: all 0.4s ease 0s;
     border-color: white;
+    right:0;
+    bottom: 0;
 }
 
 .open-chart:hover {
@@ -80,9 +81,9 @@
 .total-stats {
     padding: 1rem;
     position: relative;
-    top: 50%;
+    top: 47%;
     transform: translateY(-50%);
-    margin: 0 1rem;
+    margin: 0 1rem auto;
 }
 
 .total-stats hr {
@@ -102,7 +103,6 @@
     margin-top: 0 1rem 1rem;
 }
 
-
 .state-stats p {
     /* margin: 2rem; */
 }
@@ -111,17 +111,22 @@
     width: 20%;
 }
 
-
 .state-stats span {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25rem;
-
 }
 .chart {
     /* margin-bottom: 4rem; */
     /* width: auto; */
     /* height: 10%; */
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
+    background-color: '#6d8bf7';
+    /* top: '50%';
+    left: '50%';
+    right: 'auto';
+    bottom: 'auto';
+    marginRight: '-50%';
+    transform: 'translate(-50%, -50%)'; */
 }
 
 .chart hr {
@@ -137,6 +142,64 @@ path:hover {
     cursor: pointer;
     /* transo */
 }
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.3);
+        /* background-color: red; */
+        border-radius: 100%;
+        /* top: '50%';
+        left: '50%';
+        right: 'auto';
+        bottom: 'auto'; */
+        /* marginright: '-50%'; */
+        /* transform: 'translate(-50%, -50%)'; */
+    }
+    50% {
+        /* background-color: orange; */
+        /* transform: scale(0.5); */
+    }
+    100% {
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        /* background-color: yellow; */
+    }
+}
+
+@keyframes chartZoom {
+    0% {
+        transform: scale(0.3);
+        /* background-color: red; */
+        border-radius: 100%;
+        /* top: '50%';
+        left: '50%';
+        right: 'auto';
+        bottom: 'auto'; */
+        /* marginright: '-50%'; */
+        /* transform: 'translate(-50%, -50%)'; */
+    }
+    50% {
+        /* background-color: orange; */
+        /* transform: scale(0.5); */
+    }
+    100% {
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        /* background-color: yellow; */
+    }
+}
+
+
 
 @media only screen and (max-width: 768px) {
     .map {

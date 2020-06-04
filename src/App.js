@@ -9,12 +9,22 @@ import { Line } from 'react-chartjs-2';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+
+
+
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
 // const axios = require('axios');
 
+
+
 const customStateModalStyles = {
     content: {
+        animationName: 'zoom',
+        animationDuration:'1s',
+        animationTimingFunction: 'ease-out',
+        animationDelay: '0',
+        animationDirection: 'alternate',
         backgroundColor: '#6d8bf7',
         top: '50%',
         left: '50%',
@@ -22,11 +32,17 @@ const customStateModalStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+  
     },
 };
 
 const customChartModalStyles = {
     content: {
+        animationName: 'chartZoom',
+        animationDuration:'1s',
+        animationTimingFunction: 'ease-out',
+        animationDelay: '0',
+        animationDirection: 'alternate',
         backgroundColor: '#6d8bf7',
         top: '50%',
         left: '50%',
@@ -54,10 +70,7 @@ class App extends Component {
     async componentDidMount() {
         let specificCountry = await track.countries('United States');
         this.setState({ US: specificCountry });
-
-        // let specificState = await track.states('California');
-        // this.setState({ USState: specificState });
-        // console.log(this.state.USState);
+  
         let res = await track.historical(null, 'United States');
         track.historical(true);
         console.log(res);
@@ -566,12 +579,6 @@ class App extends Component {
             <div className='App'>
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <div className='total-stats-container'>
-                    <button
-                        className='open-chart'
-                        onClick={this.openChartModal}
-                    >
-                        Historical Timeline
-                    </button>
                     <USTotal US={this.state.US} />
                     <Modal
                         isOpen={this.state.chartModalIsOpen}
@@ -581,7 +588,6 @@ class App extends Component {
                         contentLabel='Example Modal'
                     >
                         <div className='chart'>
-                            {/* <hr /> */}
                             <button onClick={this.closeChartModal} className='close-button'>x</button>
                             <Line
                                 data={this.state.historical}
@@ -637,6 +643,12 @@ class App extends Component {
                             />
                         </div>
                     </Modal>
+                    <button
+                        className='open-chart'
+                        onClick={this.openChartModal}
+                    >
+                        Historical Timeline
+                    </button>
                 </div>
                 <div className='map'>
                     <USAMap
