@@ -183,11 +183,11 @@ path:hover {
 
     .map {
         margin:  1rem;
-        padding: 2rem 2rem 6rem 2rem;
+        padding: 4rem 2rem 7rem 2rem;
     }
     .total-stats-container {
         text-align: center;
-        font-size: .8rem;
+        /* font-size: .8rem; */
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
