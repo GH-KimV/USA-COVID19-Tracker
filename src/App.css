@@ -205,15 +205,15 @@ path:hover {
     }
 
     .total-stats {
-        /* padding: 1rem; */
-        /* position: relative; */
+        /* padding: 4rem; */
+        position: relative;
         /* bottom: 0; */
         display: inline-flex;
         /* flex-direction: row; */
         transform: unset;
-        /* margin: 1rem; */
-        /* top: unset; */
-        /* float: left; */
+        /* margin: 2rem; */
+        top: unset;
+        float: left;
         /* width: auto; */
         /* height: auto; */
     }
@@ -223,10 +223,8 @@ path:hover {
     }
 
     .total-stats hr {
-        display: none;
+        /* display: none; */
     }
 
-    .us-map {
-        /* width: 10rem; */
-    }
+    
 }
