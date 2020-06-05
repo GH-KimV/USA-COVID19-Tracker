@@ -181,12 +181,12 @@ path:hover {
 /* html,body,#page, header { height:100%;} */
 
     .map {
-        margin: 2rem;
+        margin: 4rem 2rem;
         padding: 4rem;
     }
     .total-stats-container {
         text-align: center;
-        font-size: 1rem;
+        /* font-size: 1rem; */
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
@@ -219,7 +219,8 @@ path:hover {
     }
 
     .total-stats p {
-        margin: 1rem;
+        margin: 0;
+        padding: 6rem;
     }
 
     .total-stats hr {
