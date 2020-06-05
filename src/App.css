@@ -183,7 +183,7 @@ path:hover {
 
     .map {
         margin:  1rem;
-        padding: 6rem;
+        padding: 2rem 2rem 6rem 2rem;
     }
     .total-stats-container {
         text-align: center;
