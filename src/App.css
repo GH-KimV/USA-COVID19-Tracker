@@ -208,20 +208,20 @@ path:hover {
         /* padding: 4rem; */
         position: relative;
         /* bottom: 0; */
-        display: inline-flex;
+        display: flex;
         /* flex-direction: row; */
-        transform: unset;
+        transform: none;
         /* margin: 2rem; */
         top: unset;
-        float: left;
+        left:0;
         /* width: auto; */
         /* height: auto; */
     }
 
-    .total-stats p {
+    /* .total-stats p {
         margin: 0;
         padding: 6rem;
-    }
+    } */
 
     .total-stats hr {
         /* display: none; */
