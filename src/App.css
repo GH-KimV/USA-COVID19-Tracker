@@ -178,11 +178,12 @@ path:hover {
     position: relative;
 }
 
+
 /* html,body,#page, header { height:100%;} */
 
     .map {
-        margin:  2rem;
-        /* padding: 4rem; */
+        margin:  1rem;
+        padding: 4rem;
     }
     .total-stats-container {
         text-align: center;
@@ -214,6 +215,4 @@ path:hover {
         width: 0;
         margin: 0 .5rem;
     }
-
-    
 }
