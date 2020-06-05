@@ -181,7 +181,8 @@ path:hover {
 /* html,body,#page, header { height:100%;} */
 
     .map {
-        margin: 0;
+        margin: 2rem;
+        padding: 2rem;
     }
     .total-stats-container {
         text-align: center;
@@ -189,12 +190,13 @@ path:hover {
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
-        display: inline-flex;
+        /* width: fit-content; */
+        /* display: inline-flex; */
         /* flex-direction: row; */
         bottom: 0;
         left: 0;
         top: unset;
-        right: unset;
+        right: 0;
         width: auto;
     }
 
@@ -207,9 +209,9 @@ path:hover {
         position: relative;
         bottom: 0;
         display: inline-flex;
-        flex-direction: row;
+        /* flex-direction: row; */
         transform: unset;
-        margin: 1rem;
+        /* margin: 1rem; */
         top: unset;
         float: left;
         /* width: auto; */

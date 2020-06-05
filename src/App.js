@@ -656,7 +656,7 @@ class App extends Component {
                         customize={this.statesFilling()}
                         defaultFill='rgb(180, 192, 233)'
                         title='USA Map'
-                        width={'auto'}
+                        width={800}
                         // height={200}
                     />
                 </div>
