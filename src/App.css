@@ -188,10 +188,12 @@ path:hover {
         font-size: 1rem;
         background-color: #6d8bf7;
         position: absolute;
+        width: auto;
         height: fit-content;
         display: flex;
         flex-direction: row;
         bottom: 0;
+        left: 0;
         top: unset;
         right: unset;
     }
@@ -201,9 +203,12 @@ path:hover {
     }
 
     .total-stats {
+        position: relative;
+        bottom: 0;
         display: inline-flex;
         transform: unset;
         margin: unset;
+        top: unset;
         /* width: auto; */
         /* height: auto; */
     }
