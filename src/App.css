@@ -186,7 +186,7 @@ path:hover {
     }
     .total-stats-container {
         text-align: center;
-        /* font-size: 1rem; */
+        font-size: .8rem;
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
@@ -225,6 +225,9 @@ path:hover {
 
     .total-stats hr {
         /* display: none; */
+        /* margin: 0; */
+        width: 0;
+        height: 80%
     }
 
     
