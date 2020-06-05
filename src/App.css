@@ -187,8 +187,8 @@ path:hover {
         text-align: center;
         font-size: 1rem;
         background-color: #6d8bf7;
-        position: absolute;
-        width: auto;
+        position: fixed;
+        width: 100%;
         height: fit-content;
         display: flex;
         flex-direction: row;
