@@ -212,6 +212,8 @@ path:hover {
         /* flex-direction: row; */
         transform: none;
         /* margin: 2rem; */
+        /* margin: 0 2rem; */
+
         top: unset;
         left:0;
         /* width: auto; */
@@ -219,7 +221,7 @@ path:hover {
     }
 
     .total-stats p {
-        margin: 0 2rem;
+        margin: unset;
         /* padding: 6rem; */
     }
 
@@ -227,7 +229,7 @@ path:hover {
         /* display: none; */
         /* margin: 0; */
         width: 0;
-        height: 100%;
+        /* height: 100%; */
         margin: 0 .5rem;
     }
 
