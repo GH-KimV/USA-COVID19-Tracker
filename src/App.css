@@ -194,9 +194,9 @@ path:hover {
         /* display: inline-flex; */
         /* flex-direction: row; */
         bottom: 0;
-        left: 0;
+        /* left: 0; */
         top: unset;
-        right: 0;
+        /* right: 0; */
         width: auto;
     }
 
@@ -214,8 +214,8 @@ path:hover {
         /* margin: 2rem; */
         /* margin: 0 2rem; */
 
-        top: unset;
-        left:0;
+        /* top: unset; */
+        /* left:0; */
         /* width: auto; */
         /* height: auto; */
     }
