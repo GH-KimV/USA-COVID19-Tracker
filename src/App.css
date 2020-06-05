@@ -188,14 +188,14 @@ path:hover {
         font-size: 1rem;
         background-color: #6d8bf7;
         position: fixed;
-        width: 100%;
         height: fit-content;
-        display: flex;
-        flex-direction: row;
+        display: inline-flex;
+        /* flex-direction: row; */
         bottom: 0;
         left: 0;
         top: unset;
         right: unset;
+        width: auto;
     }
 
     .open-chart{
@@ -205,14 +205,19 @@ path:hover {
     .total-stats {
         padding: 1rem;
         position: relative;
-        width: auto;
         bottom: 0;
-        display: inline-block;
+        display: inline-flex;
+        flex-direction: row;
         transform: unset;
-        margin: unset;
+        margin: 1rem;
         top: unset;
+        float: left;
         /* width: auto; */
         /* height: auto; */
+    }
+
+    .total-stats p {
+        margin: 1rem;
     }
 
     .us-map {
