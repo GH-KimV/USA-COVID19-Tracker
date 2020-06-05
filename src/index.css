@@ -1,4 +1,4 @@
-body {
+html, body {
   background-color: rgb(145, 163, 226);
   /* background-color: rgb(180, 192, 233); */
   
@@ -10,6 +10,7 @@ body {
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* height: 100%; */
 }
 
 code {

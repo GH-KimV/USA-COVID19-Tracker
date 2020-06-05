@@ -38,7 +38,7 @@ const customStateModalStyles = {
 
 const customChartModalStyles = {
     content: {
-        animationName: 'chartZoom',
+        animationName: 'zoom',
         animationDuration:'1s',
         animationTimingFunction: 'ease-out',
         animationDelay: '0',

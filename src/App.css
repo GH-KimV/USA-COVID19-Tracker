@@ -1,4 +1,6 @@
 .App {
+    /* min-height: 100%; */
+    /* position: relative; */
 }
 
 .app-title {
@@ -64,7 +66,6 @@
     font-size: 1rem;
     display: inline-block;
     border: none;
-    /* transition: all 0.4s ease 0s; */
     transition: all 0.5s ease 0s;
     padding: 0.5rem;
 }
@@ -171,52 +172,40 @@ path:hover {
     }
 }
 
-@keyframes chartZoom {
-    0% {
-        transform: scale(0.3);
-        /* background-color: red; */
-        border-radius: 100%;
-        /* top: '50%';
-        left: '50%';
-        right: 'auto';
-        bottom: 'auto'; */
-        /* marginright: '-50%'; */
-        /* transform: 'translate(-50%, -50%)'; */
-    }
-    50% {
-        /* background-color: orange; */
-        /* transform: scale(0.5); */
-    }
-    100% {
-        transform: scale(1);
-        top: 50%;
-        left: 50%;
-        right: auto;
-        bottom: auto;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        /* background-color: yellow; */
-    }
-}
-
-
 
 @media only screen and (max-width: 768px) {
+.App {
+    position: relative;
+}
+
+/* html,body,#page, header { height:100%;} */
+
     .map {
-        /* float: none;
-        width: 100%; */
+        margin: 0;
+    }
+    .total-stats-container {
+        text-align: center;
+        font-size: 1rem;
+        background-color: #6d8bf7;
+        position: absolute;
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        bottom: 0;
+        top: unset;
+        right: unset;
     }
 
-    .container {
-        /* display: block;
-        text-align: center; */
+    .open-chart{
+        /* display: none; */
     }
 
     .total-stats {
-        /* width: auto;
-        background-color: lightgray;
-        border-radius: 1rem;
-        display: inline-flex; */
+        display: inline-flex;
+        transform: unset;
+        margin: unset;
+        /* width: auto; */
+        /* height: auto; */
     }
 
     .us-map {
