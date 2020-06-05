@@ -188,7 +188,7 @@ path:hover {
         text-align: center;
         font-size: .8rem;
         background-color: #6d8bf7;
-        position: absolute;
+        position: fixed;
         height: fit-content;
         /* width: fit-content; */
         /* display: inline-flex; */
@@ -197,7 +197,7 @@ path:hover {
         left: 0;
         top: unset;
         right: unset;
-        width: auto;
+        width: inherit;
     }
 
     .open-chart{
