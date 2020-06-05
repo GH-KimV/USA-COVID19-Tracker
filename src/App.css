@@ -205,15 +205,15 @@ path:hover {
     }
 
     .total-stats {
-        padding: 1rem;
-        position: relative;
-        bottom: 0;
+        /* padding: 1rem; */
+        /* position: relative; */
+        /* bottom: 0; */
         display: inline-flex;
         /* flex-direction: row; */
         transform: unset;
         /* margin: 1rem; */
-        top: unset;
-        float: left;
+        /* top: unset; */
+        /* float: left; */
         /* width: auto; */
         /* height: auto; */
     }
