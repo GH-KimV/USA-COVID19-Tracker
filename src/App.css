@@ -199,13 +199,15 @@ path:hover {
     }
 
     .open-chart{
-        /* display: none; */
+        /* height: ; */
     }
 
     .total-stats {
+        padding: 1rem;
         position: relative;
+        width: auto;
         bottom: 0;
-        display: inline-flex;
+        display: inline-block;
         transform: unset;
         margin: unset;
         top: unset;
