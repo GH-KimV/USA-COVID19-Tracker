@@ -181,8 +181,8 @@ path:hover {
 /* html,body,#page, header { height:100%;} */
 
     .map {
-        margin: 4rem 2rem;
-        padding: 4rem;
+        margin:  2rem;
+        /* padding: 4rem; */
     }
     .total-stats-container {
         text-align: center;
@@ -190,9 +190,6 @@ path:hover {
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
-        /* width: fit-content; */
-        /* display: inline-flex; */
-        /* flex-direction: row; */
         bottom: 0;
         left: 0;
         top: unset;
@@ -200,37 +197,21 @@ path:hover {
         width: inherit;
     }
 
-    .open-chart{
-        /* height: ; */
-    }
 
     .total-stats {
-        /* padding: 4rem; */
         position: relative;
         bottom: 0;
         display: flex;
-        /* flex-direction: row; */
         transform: none;
-        /* margin: 2rem; */
-        /* margin: 0 2rem; */
-
         top: unset;
-        /* left:0;
-        right: 0; */
-        /* width: auto; */
-        /* height: auto; */
     }
 
     .total-stats p {
         margin: unset;
-        /* padding: 6rem; */
     }
 
     .total-stats hr {
-        /* display: none; */
-        /* margin: 0; */
         width: 0;
-        /* height: 100%; */
         margin: 0 .5rem;
     }
 
