@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import './App.css';
-// import 'materialize-css/dist/css/materialize.min.css';
 import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
+import { Zoom, ZoomVariants } from './components/styles';
 import { Line } from 'react-chartjs-2';
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
-
 // const axios = require('axios');
+
 
 class App extends Component {
     state = {
@@ -21,10 +21,9 @@ class App extends Component {
         let specificCountry = await track.countries('United States');
         this.setState({ US: specificCountry });
 
-        let specificState = await track.states('California');
-        this.setState({ USState: specificState });
-        console.log(this.state.USState);
-        // let res = await axios.get('https://corona.lmao.ninja/v2/historical/us');
+        // let specificState = await track.states('California');
+        // this.setState({ USState: specificState });
+        // console.log(this.state.USState);
         let res = await track.historical(null, 'United States');
         track.historical(true);
         console.log(res);
@@ -314,6 +313,7 @@ class App extends Component {
     };
 
     getCA = async () => {
+       
         let specificState = await track.states('California');
         this.setState({ USState: specificState });
     };
@@ -328,9 +328,15 @@ class App extends Component {
         this.setState({ USState: specificState });
     };
 
-    mapHandler = (e) => {};
+    selectState = () => {
+        let select = false;
+        if(!select){
+            
+        }
+    }
 
     statesFilling = () => {
+        this.selectState()
         return {
             NJ: {
                 clickHandler: () => this.getNJ(),
@@ -477,7 +483,7 @@ class App extends Component {
                 clickHandler: () => this.getNV(),
             },
             CA: {
-                fill: '#6d8bf7',
+                // fillColor: '#6d8bf7',
                 clickHandler: () => this.getCA(),
             },
             OR: {
@@ -495,58 +501,85 @@ class App extends Component {
                 <h3 className='app-title'>COVID-19 UNITED STATES TRACKER</h3>
                 <div className='total-stats-container'>
                     <USTotal US={this.state.US} />
-                </div>
-                <div className=''>
-                    <div className='map'>
-                        <USAMap
-                            className='us-map'
-                            customize={this.statesFilling()}
-                            defaultFill='rgb(180, 192, 233)'
-                            title='USA Map'
-                            width={`auto`}
-                            // height={200}
+                    <div className='chart'>
+                        <hr />
+                        <Line
+                            data={this.state.historical}
+                            width={350}
+                            height={270}
+                            options={{
+                                maintainAspectRatio: true,
+                                title: {
+                                    display: true,
+                                    text: 'Historical Timeline for US Cases',
+                                    fontSize: 15,
+                                    fontColor: 'white',
+                                },
+                                legend: {
+                                    display: true,
+                                    labels: {
+                                        display: true,
+                                        fontColor: 'white',
+                                        fontSize: 12,
+                                    },
+                                },
+                                scales: {
+                                    display: true,
+                                    fontSize: 15,
+
+                                    fontColor: 'white',
+                                    yAxes: [
+                                        {
+                                            id: 'cases',
+                                            type: 'linear',
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                        {
+                                            id: 'deaths',
+                                            type: 'linear',
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                    ],
+                                    xAxes: [
+                                        {
+                                            ticks: {
+                                                fontColor: 'white',
+                                            },
+                                        },
+                                    ],
+                                },
+                            }}
                         />
                     </div>
-                    <div className='sub-container'>
-                        {/* <div className='state-stats'>
+                </div>
+                {/* <div className=''> */}
+                    <div className='map'>
+                            <USAMap
+                                className='us-map'
+                                customize={this.statesFilling()}
+                                // onClick={}
+                                defaultFill='rgb(180, 192, 233)'
+                                title='USA Map'
+                                width={'auto'}
+                                // height={200}
+                            />
+                    </div>
+            
+                    {/* </Zoom> */}
+
+                    {/* <div className='state-stats'>
                             <h3>
                                 {this.state.USState.state} Current COVID-19
                                 Stats
                             </h3>
                             <USStateItem USState={this.state.USState} />
                         </div> */}
-                        {/* <div className='chart'>
-                            <Line
-                                data={this.state.historical}
-                                options={{
-                                    maintainAspectRatio: true,
-                                    title: {
-                                        display: true,
-                                        text:
-                                            'Historical Timeline for US Cases',
-                                        fontSize: 20
-                                    },
-                                    legend: {
-                                        display: true
-                                    },
-                                    scales: {
-                                        yAxes: [
-                                            {
-                                                id: 'cases',
-                                                type: 'linear'
-                                            },
-                                            {
-                                                id: 'deaths',
-                                                type: 'linear'
-                                            }
-                                        ]
-                                    }
-                                }}
-                            />
-                        </div> */}
-                    </div>
                 </div>
-            </div>
+            // </div>
         );
     }
 }

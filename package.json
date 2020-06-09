@@ -9,7 +9,6 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "chartjs": "^0.3.24",
-    "materialize-css": "^1.0.0",
     "novelcovid": "^1.2.7",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
