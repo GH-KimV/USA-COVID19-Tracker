@@ -38,7 +38,7 @@ const customStateModalStyles = {
 
 const customChartModalStyles = {
     content: {
-        animationName: 'chartZoom',
+        animationName: 'zoom',
         animationDuration:'1s',
         animationTimingFunction: 'ease-out',
         animationDelay: '0',
@@ -50,6 +50,7 @@ const customChartModalStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
+        width: '85%'
     },
 };
 
@@ -656,8 +657,8 @@ class App extends Component {
                         customize={this.statesFilling()}
                         defaultFill='rgb(180, 192, 233)'
                         title='USA Map'
-                        width={'auto'}
-                        // height={200}
+                        width={1000}
+                        height={700}
                     />
                 </div>
 
