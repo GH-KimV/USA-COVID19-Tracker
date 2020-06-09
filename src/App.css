@@ -41,7 +41,7 @@
     display: inline-block;
     transition: all 0.4s ease 0s;
     border-color: white;
-    right:0;
+    right: 0;
     bottom: 0;
 }
 
@@ -172,22 +172,18 @@ path:hover {
     }
 }
 
-
 @media only screen and (max-width: 768px) {
-.App {
-    position: relative;
-}
-
-
-/* html,body,#page, header { height:100%;} */
+    .App {
+        position: relative;
+    }
 
     .map {
-        margin:  1rem;
+        margin: 1rem;
         padding: 4rem 2rem 7rem 2rem;
     }
     .total-stats-container {
         text-align: center;
-        font-size: .85rem;
+        font-size: 0.85rem;
         background-color: #6d8bf7;
         position: fixed;
         height: fit-content;
@@ -197,7 +193,6 @@ path:hover {
         right: unset;
         width: inherit;
     }
-
 
     .total-stats {
         position: relative;
@@ -213,6 +208,6 @@ path:hover {
 
     .total-stats hr {
         width: 0;
-        margin: 0 .5rem;
+        margin: 0 0.5rem;
     }
 }
