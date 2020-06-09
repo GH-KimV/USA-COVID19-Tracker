@@ -1,71 +1,99 @@
 .App {
-  text-align: center;
 }
 
-.container{
-  display: inline-flex;
+.app-title {
+    float: left;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    width: 10rem;
+    text-align: left;
+    top:0;
+    position: absolute;
 }
 
 .map {
-  float: left;
-  margin: 0 0 0 2rem;
+  margin-top: 8rem;
+    margin-right: 15rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.total-stats-container{
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #6d8bf7;
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top: 0;
 }
 
 .total-stats {
-  background-color: lightgray;
-  border-radius: 1rem;
-  display: inline-flex;
+  padding:  2rem;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.total-stats hr {
+    width: 30%;
 }
 
 .total-stats p {
-  margin: 1rem;
+    margin-top: 1rem;
+}
+
+.total-stats span {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .state-stats {
-  width: 20rem;
-  height: 15rem;
-  margin: 4rem 0 2rem 12rem;
-  padding: 1rem;
-  background-color: lightgray;
-  border-radius: 1rem;
-  font-size: 0.9rem;
+    /* width: 20rem;
+    height: 15rem;
+    margin: 4rem 0 2rem 12rem;
+    padding: 1rem;
+    background-color: lightgray;
+    border-radius: 1rem;
+    font-size: 0.9rem; */
 }
 
 .chart {
-  margin: 0;
-  width: auto;
-  height: auto;
+    /* margin: 0;
+    width: auto;
+    height: auto; */
 }
 
 path {
-  pointer-events: all;
+    pointer-events: all;
 }
 
 path:hover {
-  fill: #CC0000;
-  opacity: 0.50;
-  cursor: pointer;
+    fill: #6d8bf7;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
-  .map {
-    float: none;
-    width: 100%;
-  }
+    .map {
+        /* float: none;
+        width: 100%; */
+    }
 
-.container{
-  display: block;
-  text-align: center;
-}
+    .container {
+        /* display: block;
+        text-align: center; */
+    }
 
-.total-stats {
-  width: auto;
-  background-color: lightgray;
-  border-radius: 1rem;
-  display: inline-flex;
-}
+    .total-stats {
+        /* width: auto;
+        background-color: lightgray;
+        border-radius: 1rem;
+        display: inline-flex; */
+    }
 
-.us-map {
-  width: 10rem;
-}
+    .us-map {
+        /* width: 10rem; */
+    }
 }

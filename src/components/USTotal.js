@@ -6,22 +6,31 @@ const USTotal = ({
     return (
         <div className='total-stats'>
             <p>
-                <strong>Total Cases:</strong> {cases}
+                <strong>Total Cases</strong><br/><span> {cases}</span>
             </p>
+            <hr />
             <p>
-                <strong>Active Cases:</strong> {active}
+                <strong>Active Cases</strong><br/><span> {active}</span>
             </p>
+            <hr />
+
             <p>
-                <strong>Recovered:</strong> {recovered}
+                <strong>Recovered</strong><br/><span> {recovered}</span>
             </p>
+            <hr />
+
             <p>
-                <strong>Total Deaths:</strong> {deaths}
+                <strong>Total Deaths</strong><br/><span> {deaths}</span>
             </p>
+            <hr />
+
             <p>
-                <strong>Recent Cases:</strong> {todayCases}
+                <strong>Recent Cases</strong><br/> <span> {todayCases}</span>
             </p>
+            <hr />
+
             <p>
-                <strong>Recent Deaths:</strong> {todayDeaths}
+                <strong>Recent Deaths</strong><br/><span> {todayDeaths}</span>
             </p>
         </div>
     );
