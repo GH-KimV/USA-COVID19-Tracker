@@ -9,7 +9,6 @@ import Modal from 'react-modal';
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
 
-
 const customStateModalStyles = {
     content: {
         animationName: 'zoom',
@@ -44,7 +43,6 @@ const customChartModalStyles = {
         width: '62%'
     },
 };
-
 
 Modal.setAppElement(document.getElementById('root'));
 
