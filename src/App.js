@@ -1,21 +1,13 @@
-import React, { Component, useRef } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import USAMap from 'react-usa-map';
 import USStateItem from './components/USStateItem';
 import USTotal from './components/USTotal';
-import { Zoom, ZoomVariants } from './components/styles';
 import { Line } from 'react-chartjs-2';
-
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-
-
-
 
 const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid();
-// const axios = require('axios');
-
 
 
 const customStateModalStyles = {
@@ -32,7 +24,6 @@ const customStateModalStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-  
     },
 };
 
@@ -54,9 +45,7 @@ const customChartModalStyles = {
     },
 };
 
-var subtitle;
 
-// Modal.setAppElement('#root');
 Modal.setAppElement(document.getElementById('root'));
 
 class App extends Component {
@@ -74,7 +63,6 @@ class App extends Component {
   
         let res = await track.historical(null, 'United States');
         track.historical(true);
-        console.log(res);
         const cases = res.timeline.cases;
         const deaths = res.timeline.deaths;
 
@@ -119,6 +107,11 @@ class App extends Component {
             },
         });
     }
+
+    getData = async (stateName) => {
+        let specificState = await track.states(stateName);
+        this.setState({ USState: specificState });
+    };
 
     getNY = async () => {
         let specificState = await track.states('New York');
@@ -529,7 +522,6 @@ class App extends Component {
                 clickHandler: () => this.getNV() && this.openStateModal(),
             },
             CA: {
-                // fillColor: '#6d8bf7',
                 clickHandler: () => this.getCA() && this.openStateModal(),
             },
             OR: {
@@ -547,11 +539,6 @@ class App extends Component {
         });
     };
 
-    afterOpenStateModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#6d8bf7';
-    }
-
     closeStateModal = () => {
         this.setState({
             stateModalIsOpen: false,
@@ -563,11 +550,6 @@ class App extends Component {
             chartModalIsOpen: true,
         });
     };
-
-    afterOpenChartModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#6d8bf7';
-    }
 
     closeChartModal = () => {
         this.setState({
@@ -657,11 +639,8 @@ class App extends Component {
                         customize={this.statesFilling()}
                         defaultFill='rgb(180, 192, 233)'
                         title='USA Map'
-                        width={1000}
-                        height={700}
                     />
                 </div>
-
                 <Modal
                     isOpen={this.state.stateModalIsOpen}
                     onAfterOpen={this.afterOpenStateModal}
@@ -670,10 +649,7 @@ class App extends Component {
                     contentLabel='Example Modal'
                 >
                     <div className='state-stats'>
-                        <h3 ref={(_subtitle) => (subtitle = _subtitle)}>
-                            {/* {this.state.USState.state} current COVID-19 stats */}
                             <button onClick={this.closeStateModal} className='close-button'>x</button>
-                        </h3>
                         <USStateItem USState={this.state.USState} />
                     </div>
                 </Modal>
