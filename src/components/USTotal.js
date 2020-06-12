@@ -15,7 +15,7 @@ const USTotal = ({
             <hr />
 
             <p>
-                <strong>Recovered Cases:</strong><br/><span> {recovered}</span>
+                <strong>Recovered Cases</strong><br/><span> {recovered}</span>
             </p>
             <hr />
 
